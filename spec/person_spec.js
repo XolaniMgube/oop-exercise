@@ -16,6 +16,6 @@ describe("Person Class", function(){
     })
 
     it("First index of interensts", function(){
-        expect(xolani.interests[0]).toBe("Ping Pong")
+        expect(xolani.interests[1]).toBe("Reading")
     })
 })
