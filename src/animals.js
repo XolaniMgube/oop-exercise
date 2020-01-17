@@ -32,9 +32,9 @@ class Dog extends Animal{
 }
 
 
-let cat1 = new Cat("Kurtlin")
-let dog1 = new Dog("Lentswe")
-let dog2 = new Dog("Mdu")
+let cat1 = new Cat("Cat")
+let dog1 = new Dog("Dog1")
+let dog2 = new Dog("Dog2")
 
 
 class Home{
@@ -44,23 +44,28 @@ class Home{
   
     adoptPet(para){
         this.animalArray.push(para)
-        // console.log(this.animalArray)
+         //console.log(this.animalArray)
     }
     
     makeAllSounds(){ 
-        if (this.animalArray == null){
-            return " "
-        }
+        
 
         for (let i = 0; i < this.animalArray.length; i++){
-            return this.animalArray[i].sound()
+
+            if (this.animalArray == null){
+                return " "
+            }
+
+            console.log(this.animalArray[i].sound()) 
         }
 
-        console.log(this.animalArray.length.sound())
+        //console.log(this.animalArray[0])
+
+        //console.log(this.animalArray.length.sound())
 
         
     }
-
+ 
 
 }
 
@@ -75,11 +80,21 @@ let home = new Home()
 
 // console.log(home.makeAllSounds())
 
-home.adoptPet(dog1)
-home.adoptPet(cat1)
-home.adoptPet(dog2)
-// console.log(home.makeAllSounds())
-home.makeAllSounds()
+// home.adoptPet(dog1)
+// home.adoptPet(cat1)
+// home.adoptPet(dog2)
+// // console.log(home.makeAllSounds())
+// home.makeAllSounds()
+
+home.makeAllSounds();// this doesn't give/return any result/data
+home.adoptPet(dog1);
+home.makeAllSounds();
+
+home.adoptPet(cat1);
+home.makeAllSounds();
+
+home.adoptPet(dog2);
+home.makeAllSounds();
 
 
 
