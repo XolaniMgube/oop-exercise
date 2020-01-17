@@ -1,14 +1,12 @@
 "use strict"
 
 class Animal{
-    constructor(name, age, gender){
+    constructor(name){
         this.name = name
-        this.age = age
-        this.gender = gender
     }
 
     sound(){
-        return "Sound"
+        console.log("Sound") 
     }
 
     eat(){
@@ -18,53 +16,70 @@ class Animal{
 
 
 class Cat extends Animal{
-    // constructor(name){
-    //     super(name);
-    // }
     sound(){
-        console.log(this.name + " meows and is " + this.age + " years old")
+        return this.name + " meows"
     }
 }
 
-let cat1 = new Cat("Kurtlin", 23, "male")
-// cat1.sound()
-// cat1.eat()
+
+
 
 
 class Dog extends Animal{
     sound(){
-        console.log(this.name + " barks and is a " + this.gender)
+        return this.name + " barks"
     }
 }
 
-let dog1 = new Dog("Lentswe", 26, "female")
-// dog1.sound()
-// dog1.eat()
+
+let cat1 = new Cat("Kurtlin")
+let dog1 = new Dog("Lentswe")
+let dog2 = new Dog("Mdu")
 
 
-class Home extends Animal{
-   
-    adoptPet(){
-        let animalArray = [];
-        console.log(this.name)
-        animalArray.push(cat1)
-        animalArray.push(dog1)
-
-        console.log(animalArray)
-       
-        
+class Home{
+    constructor(){
+        this.animalArray = []
+    }
+  
+    adoptPet(para){
+        this.animalArray.push(para)
+        // console.log(this.animalArray)
     }
     
-    makeAllSounds(){   
+    makeAllSounds(){ 
+        if (this.animalArray == null){
+            return " "
+        }
+
+        for (let i = 0; i < this.animalArray.length; i++){
+            return this.animalArray[i].sound()
+        }
+
+        console.log(this.animalArray.length.sound())
+
+        
     }
 
 
 }
 
 
-let home = new Home(cat1.name)
-home.adoptPet()
 
-// cat1.sound()
+
+let home = new Home()
+
+
+
+
+
+// console.log(home.makeAllSounds())
+
+home.adoptPet(dog1)
+home.adoptPet(cat1)
+home.adoptPet(dog2)
+// console.log(home.makeAllSounds())
+home.makeAllSounds()
+
 
 
