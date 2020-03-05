@@ -16,13 +16,13 @@ class Animal {
 
 class Cat extends Animal {
   sound() {
-    return "Cat meows";
+    return this.name + " meows";
   }
 }
 
 class Dog extends Animal {
   sound() {
-    return "Dog barks";
+    return this.name + " barks";
   }
 }
 
@@ -46,9 +46,11 @@ class Home {
 }
 
 let home = new Home();
-let dog1 = new Dog();
-let dog2 = new Dog();
-let cat = new Cat();
+let dog1 = new Dog("Xolani" );
+let dog2 = new Dog("Lenstwe");
+let cat = new Cat("Kurtlin");
+
+
 
 home.makeAllSounds();
 home.adoptPet(dog1);
@@ -61,3 +63,5 @@ console.log("---------------------------------------");
 
 home.adoptPet(dog2);
 home.makeAllSounds();
+
+
